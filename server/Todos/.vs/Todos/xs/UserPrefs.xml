@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{4875F321-E652-4C10-9CF8-B60D03B2BC3E}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Todos.Repository/Class1.cs">
+    <Files>
+      <File FileName="Todos.Models/Class1.cs" Line="7" Column="1" />
+      <File FileName="Todos.Services/Class1.cs" Line="7" Column="1" />
+      <File FileName="Todos.Repository/Class1.cs" Line="7" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Todos" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Todos.Repository FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Todos.Services FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Todos.Models FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Todos.Api FirstBuild="True" PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

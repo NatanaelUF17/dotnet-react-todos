@@ -8,21 +8,24 @@ import TextField from '@mui/material/TextField';
 import store from '../../stores/store';
 import { addTodo } from '../../stores/actions/todos.actions';
 import { useDispatch } from 'react-redux';
+import { Divider } from '@mui/material';
+import TodosList from './TodosList';
 
 
 function TodosDashboard() {
-  const [todo, setTodo] = useState({ name: '', isDone: false, createdAt: new Date().toISOString() });
+  const [todo, setTodo] = useState({ title: '', description: '', isDone: false, createdAt: new Date().toISOString() });
+  const [todoAdded, setTodoAdded] = useState(false);
   const dispatch = useDispatch();
 
   const handleAddTodo = (event) => {
-    event.preventDefault();
-    const newTodo = { ...todo, name: event.target.value };
+    const newTodo = { ...todo, [event.target.name] : event.target.value };
     setTodo(newTodo);
   }
 
   const addTodoToStore = () => {
     dispatch(addTodo(todo));
-    setTodo(prev => ({ ...prev, name: '' }));
+    setTodoAdded(true);
+    setTodo(prev => ({ ...prev, title: '', description: '' }));
   }
 
   const logState = () => {
@@ -62,12 +65,17 @@ function TodosDashboard() {
             justifyContent="center"
             alignItems="center"
           >
-            <TextField sx={{ width: '80%' }} label="Enter todo" variant='outlined' value={todo.name} onChange={(event) => handleAddTodo(event)} />
+            <TextField sx={{ width: '80%' }} name="title" type='text' label="Enter title" variant='outlined' value={todo.title} onChange={handleAddTodo} />
+            <TextField sx={{ width: '80%' }} name="description" label="Enter description" multiline rows={4} value={todo.description} onChange={handleAddTodo} />
             <Button sx={{ width: '30%' }} variant="contained" onClick={addTodoToStore}>Add</Button>
             <Button sx={{ width: '30%' }} variant="contained" onClick={logState}>Log state</Button>
           </Stack>
         </Container>
       </Box>
+      {
+        todoAdded ? <Divider variant='fullWidth' /> : null
+      }
+      <TodosList />
     </main>
   );
 }

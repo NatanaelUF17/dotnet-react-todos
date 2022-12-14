@@ -8,6 +8,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import TodosDashboard from './components/todos/TodosDashboard';
+import { Container, Divider } from '@mui/material';
+import Footer from './components/common/Footer';
 
 function App() {
   const theme = createTheme({
@@ -29,12 +31,16 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
+      <Container maxWidth=''>
       <BrowserRouter>
-      <Routes>
-        <Route index path='/' element={<TodosDashboard />} />
-        <Route />
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route index path='/' element={<TodosDashboard />} />
+          <Route />
+        </Routes>
+      </BrowserRouter>
+      </Container>
+      <Divider />
+      <Footer />
     </ThemeProvider>
   );
 }
